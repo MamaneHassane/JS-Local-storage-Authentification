@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Valider nom</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.css">
+    </head>
+    <body><h1>Mamane Dan Bouzoua Hassane</h1><center>
+        <div width= 20% style="background-color: lightpink">
+        <h1>Valider nom</h1>
+        <table cellspacing="1" cellpadding="0">
+            <tr> <td>Nom:</td> 
+            <td><input type="text" id="nom"></td></tr>
+           <tr colspan="2"><td> <button type="button" onclick="validerNom()" > Valider </button></td></tr>   
+        </table></div></center>
+    
+    <script>
+     let tester = /^[A-Za-z]+( [A-Za-z]+)*$/g;
+    function validerNom()
+    { 
+    let nom = document.querySelector("#nom").value.trim();
+    let nomInput = document.querySelector("#nom");
+    if(nom.match(tester)) {
+       nomInput.style.backgroundColor = "green";
+       nomInput.style.borderColor = "green";
+       console.log("Nom valide");
+    }
+    else {
+        nomInput.style.backgroundColor = "red";
+        nomInput.style.borderColor = "red";
+        console.log("Un probleme dans le nom");
+    }
+}
+    </script>
+    </body>
+</html>
